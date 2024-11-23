@@ -1,0 +1,23 @@
+.player {
+    z-index: 9999;
+    position: absolute;
+    bottom: 75px;
+    left: calc(100% / 3);
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    background-image: url('/storage/images/capybara.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-200px); }
+    100% { transform: translateY(0); }
+}
+
+.player.jumping {
+    animation: jump 2s ease-in-out; /* Increased duration to 1s */
+}
