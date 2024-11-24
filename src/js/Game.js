@@ -6,6 +6,7 @@ import { Bin } from './obstacles/Bin.js';
 import { Cube } from './obstacles/Cube.js';
 import { Goose } from './obstacles/Goose.js';
 import Sound from './Sound.js';
+import { Bee } from './obstacles/Bee.js';
 
 export default class Game {
     constructor() {
@@ -21,7 +22,8 @@ export default class Game {
         const obstacles = [
             new Bin(),
             new Cube(),
-            new Goose()
+            new Goose(),
+            new Bee()
         ];
 
         const timeBetweenObstacles = window.innerWidth > 768 ? 2000 : 3000; // 2s for desktop, 3s for mobile
