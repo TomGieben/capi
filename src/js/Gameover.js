@@ -1,3 +1,5 @@
+import Sound from './Sound.js';
+
 export default class Gameover {
     constructor(score) {
         this.score = score;
@@ -5,6 +7,7 @@ export default class Gameover {
     }
 
     init() {
+        new Sound('gameover.mp3');
         this.showModal();
     }
 
@@ -17,7 +20,7 @@ export default class Gameover {
                             <h5 class="modal-title" id="gameoverModalLabel">Game Over</h5>
                         </div>
                         <div class="modal-body">
-                            Your score: ${this.score}
+                            Amount of Jumps: ${this.score}
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" id="reloadButton">Play Again</button>

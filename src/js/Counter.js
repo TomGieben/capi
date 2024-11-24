@@ -20,6 +20,6 @@ export class Counter {
     }
 
     #update() {
-        this.element.innerText = `Score: ${this.score}`;
+        this.element.innerText = `Jumps: ${this.score}`;
     }
 }

@@ -6,3 +6,18 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.moving-obstacle {
+    animation: moveObstacle var(--base-move-obstacle-duration) linear infinite;
+}
+
+@keyframes moveObstacle {
+    0% { right: -50px; }
+    100% { right: calc(100% + 50px); }
+}
+
+@media (max-width: 768px) {
+    .moving-obstacle {
+        animation-duration: calc(var(--base-move-obstacle-duration) / var(--duration-factor-mobile)); /* Speed up for mobile */
+    }
+}

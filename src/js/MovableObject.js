@@ -1,12 +1,14 @@
 import Gameover from './Gameover.js';
+import Sound from './Sound.js';
 
 export class MovableObject {
-    constructor(element, counter) {
+    constructor(element, counter, game) {
         this.element = element;
         this.position = 0;
         this.isJumping = false;
         this.counter = counter;
         this.stop = false;
+        this.game = game;
         this.init();
     }
 
@@ -23,6 +25,7 @@ export class MovableObject {
         
         if (isSpacebar || isMouse || isTouch) {
             this.jump();
+            this.game.playBackgroundMusic();
         }
     }
 
@@ -31,14 +34,19 @@ export class MovableObject {
             return;
         }
 
+        new Sound('jump.mp3');
+
         this.isJumping = true;
         this.element.classList.add('jumping');
         this.counter.increment();
-        
+
+        const jumpHeight = window.innerHeight * 0.3; // 30% of the screen height
+        this.element.style.setProperty('--jump-height', `${jumpHeight}px`);
+
         setTimeout(() => {
             this.element.classList.remove('jumping');
             this.isJumping = false;
-        }, 1500);
+        }, config.jumpDuration);
     }
 
     inCollision(obstacle) {

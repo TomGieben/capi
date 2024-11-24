@@ -11,47 +11,27 @@ body {
 
 .game-container {
     height: 100vh;
-    background-image: url('https://tomgieben.github.io/capi/storage/images/sky.avif');
+    background-image: url('/storage/images/sky.avif');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #3498db;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-.counter {
-    position: absolute;
+.highscore, .counter {
     font-size: 24px;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
     border-radius: 5px;
-    top: 30%;
-    left: 50%;
-}
-
-.highscore {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 24px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn var(--fade-in-duration) ease-in-out;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
-
-.moving-obstacle {
-    animation: moveObstacle 5s linear infinite;
-}
-
-@keyframes moveObstacle {
-    0% { right: -50px; }
-    100% { right: calc(100% + 50px); }
-}
-
