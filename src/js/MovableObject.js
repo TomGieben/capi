@@ -6,6 +6,7 @@ export class MovableObject {
         this.position = 0;
         this.isJumping = false;
         this.counter = counter;
+        this.stop = false;
         this.init();
     }
 
@@ -53,7 +54,8 @@ export class MovableObject {
         const obstacles = document.querySelectorAll('.obstacle');
 
         obstacles.forEach(obstacle => {
-            if (this.inCollision(obstacle)) {
+            if (this.inCollision(obstacle) && !this.stop) {
+                this.stop = true;
                 new Gameover(this.counter.score);
             }
         });
