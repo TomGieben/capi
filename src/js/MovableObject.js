@@ -1,9 +1,11 @@
-class MovableObject {
-    constructor(element) {
+import Gameover from './Gameover.js';
+
+export class MovableObject {
+    constructor(element, counter) {
         this.element = element;
         this.position = 0;
         this.isJumping = false;
-        this.jumpCount = 0;
+        this.counter = counter;
         this.init();
     }
 
@@ -26,21 +28,15 @@ class MovableObject {
 
         this.isJumping = true;
         this.element.classList.add('jumping');
-        this.incrementCounter();
+        this.counter.increment();
         
         setTimeout(() => {
             this.element.classList.remove('jumping');
             this.isJumping = false;
-        }, 2000);
+        }, 1500);
     }
 
-    incrementCounter() {
-        this.jumpCount += 1;
-        const counter = document.querySelector('.counter');
-        counter.innerText = `Jumps: ${this.jumpCount}`;
-    }
-
-    checkCollision(obstacle) {
+    inCollision(obstacle) {
         const playerRect = this.element.getBoundingClientRect();
         const obstacleRect = obstacle.getBoundingClientRect();
 
@@ -57,9 +53,8 @@ class MovableObject {
         const obstacles = document.querySelectorAll('.obstacle');
 
         obstacles.forEach(obstacle => {
-            if (this.checkCollision(obstacle)) {
-                alert('Game Over!');
-                window.location.reload();
+            if (this.inCollision(obstacle)) {
+                new Gameover(this.counter.score);
             }
         });
     }

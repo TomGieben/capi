@@ -1,0 +1,7 @@
+{
+    "name": "capi",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "src/js/app.js",
+    "dependencies": { }
+  }

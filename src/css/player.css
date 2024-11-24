@@ -19,5 +19,5 @@
 }
 
 .player.jumping {
-    animation: jump 2s ease-in-out; /* Increased duration to 1s */
+    animation: jump 1800ms ease;
 }
