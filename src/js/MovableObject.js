@@ -13,13 +13,15 @@ export class MovableObject {
     init() {
         document.addEventListener('keydown', (event) => this.handleKeydown(event));
         document.addEventListener('mousedown', (event) => this.handleKeydown(event));
+        document.addEventListener('touchstart', (event) => this.handleKeydown(event));
     }
 
     handleKeydown(event) {
         const isSpacebar = event.key === ' ';
         const isMouse = event.type === 'mousedown';
+        const isTouch = event.type === 'touchstart';
         
-        if (isSpacebar || isMouse) {
+        if (isSpacebar || isMouse || isTouch) {
             this.jump();
         }
     }
