@@ -6,7 +6,7 @@
     width: 100px;
     height: 100px;
     background-color: transparent;
-    background-image: url('/storage/images/capybara.webp');
+    background-image: url('https://tomgieben.github.io/capi/storage/images/capybara.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

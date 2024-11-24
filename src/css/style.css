@@ -11,7 +11,7 @@ body {
 
 .game-container {
     height: 100vh;
-    background-image: url('/storage/images/sky.avif');
+    background-image: url('https://tomgieben.github.io/capi/storage/images/sky.avif');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

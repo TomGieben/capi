@@ -3,7 +3,7 @@
     bottom: 0;
     width: 100%;
     height: 100px;
-    background-image: url('/storage/images/ground.jpg');
+    background-image: url('https://tomgieben.github.io/capi/storage/images/ground.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
