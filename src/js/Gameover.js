@@ -32,7 +32,10 @@ export default class Gameover {
 
         document.body.insertAdjacentHTML('beforeend', modalHtml);
 
-        const modal = new bootstrap.Modal(document.getElementById('gameoverModal'));
+        const modal = new bootstrap.Modal(document.getElementById('gameoverModal'), {
+            backdrop: 'static',
+            keyboard: false
+        });
         
         modal.show();
 
